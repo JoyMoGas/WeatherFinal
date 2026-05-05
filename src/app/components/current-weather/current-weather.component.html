@@ -1,0 +1,57 @@
+<div class="weather-card solid-card">
+
+  <div class="loading-state" *ngIf="loading">
+    <div class="spinner"></div>
+    <p>Obteniendo datos del clima...</p>
+  </div>
+
+  <div class="error-state" *ngIf="!loading && error">
+    <i class="fa-solid fa-triangle-exclamation error-icon"></i>
+    <h3 class="error-title">Algo salio mal</h3>
+    <p class="error-message">{{ error }}</p>
+  </div>
+
+  <div class="weather-content" *ngIf="!loading && !error && weather">
+    <div class="weather-header">
+      <div class="city-info">
+        <h2 class="city-name">
+          <i class="fa-solid fa-location-dot"></i>
+          {{ weather.name }}, {{ weather.sys.country }}
+        </h2>
+        <p class="weather-desc">{{ weather.weather[0].description | titlecase }}</p>
+      </div>
+      <div class="weather-icon-wrap">
+        <i class="fa-solid {{ getWeatherIcon(weather.weather[0].icon) }} main-icon"></i>
+      </div>
+    </div>
+
+    <div class="temp-display">
+      <span class="temperature">{{ weather.main.temp | kelvinCelsius: 0 }}</span>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <i class="fa-solid fa-temperature-half"></i>
+        <span class="stat-label">Sensacion</span>
+        <span class="stat-value">{{ weather.main.feels_like | kelvinCelsius: 0 }}</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <i class="fa-solid fa-droplet"></i>
+        <span class="stat-label">Humedad</span>
+        <span class="stat-value">{{ weather.main.humidity }}%</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <i class="fa-solid fa-wind"></i>
+        <span class="stat-label">Viento</span>
+        <span class="stat-value">{{ weather.wind.speed }} m/s</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="!loading && !error && !weather">
+    <i class="fa-solid fa-earth-americas empty-icon"></i>
+    <p>Busca una ciudad para ver el clima actual</p>
+  </div>
+</div>

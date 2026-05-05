@@ -24,15 +24,15 @@ Aplicación de clima para viajeros construida con Angular. Permite consultar el 
 ## Capturas de Pantalla
 
 ### Búsqueda y Clima Actual
-![Búsqueda de ciudad](docs/images/screenshot-search.png)
-![Clima actual](docs/images/screenshot-current.png)
+![Búsqueda de ciudad](images/screenshot-search.png)
+![Clima actual](images/screenshot-current.png)
 
 ### Pronóstico y Historial
-![Pronóstico de 5 días](docs/images/screenshot-forecast.png)
-![Historial de búsquedas](docs/images/screenshot-history.png)
+![Pronóstico de 5 días](images/screenshot-forecast.png)
+![Historial de búsquedas](images/screenshot-history.png)
 
 ### Manejo de Errores
-![Error de ciudad no encontrada](docs/images/screenshot-error.png)
+![Error de ciudad no encontrada](images/screenshot-error.png)
 
 
 ## Ejecución del Proyecto

@@ -1,0 +1,58 @@
+.history-strip {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.history-strip::-webkit-scrollbar {
+  height: 4px;
+}
+
+.history-strip::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.history-strip::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+.history-label {
+  font-size: 0.9rem;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.history-pills {
+  display: flex;
+  gap: 10px;
+}
+
+.history-pill {
+  background: var(--bg-card);
+  border: none;
+  color: var(--text-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.history-pill:hover {
+  background: #f0f0f0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

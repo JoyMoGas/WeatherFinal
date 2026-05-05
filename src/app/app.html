@@ -1,0 +1,29 @@
+<main class="app-container" [ngClass]="weatherTheme">
+  <header class="app-header">
+    <h1><i class="fa-solid fa-plane-departure"></i> Travel Weather</h1>
+    <p>Consulta el clima para tu proximo destino</p>
+  </header>
+
+  <app-search-bar
+    [suggestions]="(history$ | async) || []"
+    (search)="onSearch($event)"
+  ></app-search-bar>
+
+  <app-search-history
+    [history]="(history$ | async) || []"
+    (select)="onSearch($event)"
+  ></app-search-history>
+
+  <div class="content-wrapper">
+    <app-current-weather
+      [weather]="currentWeather"
+      [loading]="(loading$ | async) || false"
+      [error]="error$ | async"
+    ></app-current-weather>
+
+    <app-forecast-grid
+      [forecast]="forecast"
+      [loading]="(loading$ | async) || false"
+    ></app-forecast-grid>
+  </div>
+</main>

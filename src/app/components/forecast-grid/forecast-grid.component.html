@@ -1,0 +1,22 @@
+<section class="forecast-section" *ngIf="forecast.length > 0 || loading">
+  <h3 class="forecast-title">
+    <i class="fa-solid fa-calendar-days"></i>
+    Pronostico 5 Dias
+  </h3>
+
+  <div class="forecast-loading" *ngIf="loading">
+    <div class="spinner-sm"></div>
+  </div>
+
+  <div class="forecast-grid" *ngIf="!loading && forecast.length > 0">
+    <div class="forecast-card solid-card" *ngFor="let day of forecast">
+      <span class="forecast-day">{{ day.dayName | titlecase }}</span>
+      <i class="fa-solid {{ getWeatherIcon(day.icon) }} forecast-icon"></i>
+      <span class="forecast-desc">{{ day.description | titlecase }}</span>
+      <div class="forecast-temps">
+        <span class="temp-max">{{ day.tempMax | kelvinCelsius: 0 }}</span>
+        <span class="temp-min">{{ day.tempMin | kelvinCelsius: 0 }}</span>
+      </div>
+    </div>
+  </div>
+</section>

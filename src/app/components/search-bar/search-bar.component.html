@@ -1,0 +1,27 @@
+<div class="search-wrapper">
+  <div class="search-input-row">
+    <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+    <input
+      id="city-search-input"
+      type="text"
+      placeholder="Buscar ciudad..."
+      [formControl]="searchControl"
+      (keydown)="onKeydown($event)"
+      autocomplete="off"
+    />
+    <button id="search-submit-btn" class="search-btn" (click)="onSubmit()">
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+
+  <ul class="suggestions-list" *ngIf="showSuggestions">
+    <li
+      *ngFor="let city of filteredSuggestions"
+      (click)="selectSuggestion(city)"
+      class="suggestion-item"
+    >
+      <i class="fa-solid fa-clock-rotate-left"></i>
+      {{ city }}
+    </li>
+  </ul>
+</div>

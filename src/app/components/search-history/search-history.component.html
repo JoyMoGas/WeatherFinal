@@ -1,0 +1,15 @@
+<div class="history-strip" *ngIf="history.length > 0">
+  <span class="history-label">
+    <i class="fa-solid fa-clock-rotate-left"></i>
+    Recientes:
+  </span>
+  <div class="history-pills">
+    <button
+      *ngFor="let city of history"
+      class="history-pill"
+      (click)="pick(city)"
+    >
+      {{ city }}
+    </button>
+  </div>
+</div>
