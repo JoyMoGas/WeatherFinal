@@ -1,5 +1,7 @@
 # Travel Weather Widget
 
+**🌐 Proyecto Desplegado:** [https://travelweathermogas.netlify.app/](https://travelweathermogas.netlify.app/)
+
 Aplicación de clima para viajeros construida con Angular. Permite consultar el clima actual y el pronóstico de 5 días para cualquier ciudad del mundo.
 
 ## Características
@@ -8,7 +10,7 @@ Aplicación de clima para viajeros construida con Angular. Permite consultar el 
 - Clima actual (temperatura, sensación térmica, humedad, viento)
 - Pronóstico extendido de 5 días
 - Historial de últimas 5 búsquedas
-- Diseño "Glassmorphism" con colores azules
+- Diseño "Flat Design" con fondos de colores sólidos dinámicos
 - Manejo de estados de carga y errores
 - Consumo de API real (OpenWeatherMap)
 
